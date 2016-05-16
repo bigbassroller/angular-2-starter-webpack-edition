@@ -63,12 +63,13 @@ function indexFile(req, res) {
 app.use(express.static(ROOT, {index: false}));
 
 // Our API for demos only
-app.get('/data.json', (req, res) => {
-  res.json({
-    data: 'This fake data came from the server.'
-  });
+app.get('/app.json', (req, res) => {
+  res.json( [{ title: "App Title", id: 1 }, { title: "Another App Title", id: 2}]);
 });
 
+app.get('/about.json', (req, res) => {
+  res.json( [{ title: "About Title", id: 1 }, { title: "Another About Title", id: 2}]);
+});
 // Routes with html5pushstate
 app.use('/', ngApp);
 app.use('/about', ngApp);
