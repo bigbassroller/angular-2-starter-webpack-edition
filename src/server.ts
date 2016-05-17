@@ -70,10 +70,15 @@ app.get('/app.json', (req, res) => {
 app.get('/about.json', (req, res) => {
   res.json( [{ title: "About Title", id: 1 }, { title: "Another About Title", id: 2}]);
 });
+
+app.get('/portfolio.json', (req, res) => {
+  res.json( [{ title: "Portfolio Title", id: 1 }, { title: "Another Portfolio Title", id: 2}]);
+});
 // Routes with html5pushstate
 app.use('/', ngApp);
 app.use('/about', ngApp);
 app.use('/home', ngApp);
+app.use('/portfolio', ngApp);
 
 // Server
 app.listen(3000, () => {
