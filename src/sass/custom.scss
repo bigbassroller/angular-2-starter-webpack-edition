@@ -1,0 +1,951 @@
+// ====================================================
+// Table of Contents
+// ====================================================
+// Scaffolding
+// Colors
+// Utilities
+// Typography
+// Images
+// Icons
+// Header
+// Navigation
+// Logo
+// Home
+// Jumbotron
+// Thumbnails
+// Carousel
+// Buttons
+// Main
+// About
+// Portfolio
+// Contact Page
+// Footer
+// Forms
+// Flex
+// Alerts
+// Media Quiries
+// Deprecating
+
+// ====================================================
+// 
+// ====================================================
+  .slideout-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+    width: 256px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    display: none;
+  }
+
+  .slideout-panel {
+    position:relative;
+    z-index: 1;
+    will-change: transform;
+  }
+
+  .slideout-open,
+  .slideout-open body,
+  .slideout-open .slideout-panel {
+    overflow: hidden;
+  }
+
+  .slideout-open .slideout-menu {
+    display: block;
+  }
+// ====================================================
+// Scaffolding
+// ====================================================
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.col-xs-1,
+.col-xs-2,
+.col-xs-3,
+.col-xs-4,
+.col-xs-5,
+.col-xs-6,
+.col-xs-7,
+.col-xs-8,
+.col-xs-9,
+.col-xs-10,
+.col-xs-11,
+.col-xs-12 {
+    z-index: 1;
+}
+body,
+#body,
+.container, 
+nav, 
+.nav,
+.logo,
+main {
+    position: relative;
+    z-index: 1;
+}
+.header-nav,
+section {
+    z-index: 2;
+}
+// ====================================================
+// Colors
+// ====================================================
+$purple: #2f153a!default;
+$brand:  #D82488!default;
+.brand {
+    color: $brand;
+}
+// ====================================================
+// Utilities
+// ====================================================
+// Cols
+[class*="col"].no-padding {
+    padding-left: 0;
+    padding-right: 0;
+}
+.display-contents {
+    display: contents;
+}
+// Images
+img:hover {
+    display: block;
+    z-index: 1;
+}
+// Image Backgrounds
+.bg-transparent {
+    background: transparent;
+}
+.background-cover {
+    position: absolute; 
+    height: 100%; 
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    background-position: 50% 50%; 
+    -webkit-background-size: cover; 
+    -moz-background-size: cover; 
+    -o-background-size: cover; 
+    background-size: cover;
+}
+.background-cover.purps {
+    background: $purple;
+}
+// Full Screen Background with HTML
+#bg {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+@media (min-width: 1400px) {
+    #bg {
+      position: absolute; 
+      top: -50%; 
+      left: -50%; 
+      width: 200%; 
+      height: 200%;
+    }
+}
+
+#bg img {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 50%;
+  min-height: 50%;
+}
+// ====================================================
+// Typography
+// ====================================================
+h1 {
+    color: #d82488;
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 1;
+    margin-top: 3px;
+}
+// h3, .h3 {
+//     margin-top: 15px;
+// }
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 0;
+}
+p {
+    font-size: 20px;
+    margin: 0 0 10px;
+}
+.active a {
+    color: #D82488;
+}
+small {
+    color: white;
+}
+
+// ====================================================
+// Images
+// ====================================================
+// Home
+#home-bg-image {
+    background: rgba(0, 0, 0, 0) url("/bg.svg") no-repeat scroll 50% 50% / cover ;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+}
+// Clouds
+.cloud {
+    position: absolute;
+}
+#cloud1 {
+    left: 68%;
+    top: 27%;
+}
+#cloud2 {
+    left: 64%;
+    top: 72%;
+}
+#cloud3 {
+    left: 14%;
+    top: 49%;
+}
+// About Services
+// #ui-ux, #web-graphic-design, #development {
+//     background: gold none repeat scroll 0 0;
+// }
+// #ui-ux {
+//     background: rgba(0, 0, 0, 0) url("/ui-ux.svg") no-repeat scroll center center / 172px 172px;
+// }
+// #web-graphic-design {
+//     background: transparent url("/web-graphic-design.svg") no-repeat scroll center center / 168px 126px;
+// }
+// #development {
+//     background: transparent url("/development.svg") no-repeat scroll center center / 168px 161px;
+// }
+// About Testimonials
+#icons-collage {
+    background: #d82488 url("/icons-collage.svg") repeat scroll center center / 658px 647px;
+    height: 100%;
+    z-index: 2;
+}
+#sfgate {
+    background: transparent url("/sfgate.svg") no-repeat scroll center center / 214px 122px;
+    height: 122px;
+    width: 214px;
+}
+// Quotes
+#quote-left,
+#quote-right {
+    position: absolute;
+    height: 53px;
+    width: 69px;
+}
+#quote-left {
+    background: transparent url("/quote-left.svg") no-repeat scroll center center / 69px 53px;
+}
+#quote-right {
+    background: transparent url("/quote-right.svg") no-repeat scroll center center / 69px 53px;
+    bottom: 0;
+    right: 0;
+}
+// About Page Bios
+#about-bg-image {
+    background: url('/amazing-milky-way-triangle-mask.png') no-repeat;
+    background-position: 50% 50%; 
+    -webkit-background-size: cover; 
+    -moz-background-size: cover; 
+    -o-background-size: cover; 
+    background-size: cover; 
+}
+#amazing-milky-way {
+   background: url('/amazing-milky-way@1x.png') no-repeat;
+   position: fixed; 
+   height: 100%; 
+   width: 100%;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   z-index: 0;
+   background-position: 50% 50%; 
+   -webkit-background-size: cover; 
+   -moz-background-size: cover; 
+   -o-background-size: cover; 
+   background-size: cover;
+}
+#shatter,
+#triangle-mask {
+    position: absolute;
+}
+#shatter {
+    background: transparent url("/shatter.svg") repeat scroll 600px 343px;
+    height: 343px;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    top: 149px;
+    width: 600px;
+}
+#triangle-mask {
+    background: transparent url("/triangle-mask.svg") repeat scroll 0 0 / 1440px 334px;
+    bottom: 0;
+    height: 334px;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    width: 100%;
+}
+// ====================================================
+// Icons
+// ====================================================
+ul.icons-list {
+    padding: 65px 0;
+}
+.icons-list li {
+    align-items: center;
+    color: white;
+    display: flex;
+    font-weight: 100;
+    margin: 10px auto;
+}
+.icons-list li span {
+    background: transparent url("/icons.svg") no-repeat scroll 0 0;
+    display: table;
+    height: 54px;
+    margin-right: 25px;
+    width: 54px;
+}
+.icons-list li address {
+    margin: 0;
+}
+#phone-number > span {
+    background-position: 0 -152px;
+}
+#email-address > span {
+    background-position: 0 -76px;
+}
+// Icons Collage
+#icons-collage-content {
+    // background: gold none repeat scroll 0 0;
+    display: table;
+    margin: 0 auto;
+    text-align: center;
+    width: 80%;
+}
+#icons-collage-text {
+    color: white;
+}
+#sfgate {
+    margin: 0 auto;
+}
+//Flex Attempt
+.flex-full-width {
+    align-items: baseline;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    margin-top: -80px;
+    width: 100%;
+}
+.left-side, .right-side {
+    height: 100%;
+    width: 50%;
+    z-index: 3;
+}
+.container.absolute {
+    height: 100%;
+    left: 0;
+    margin-top: -80px;
+    padding-top: 80px;
+    position: absolute;
+    right: 0;
+    top: 80px;
+    z-index: 9;
+}
+
+$tleft-side-width: 45%;
+$tright-side-width: 55%;
+.testimonials-main-container .left-side {
+    width: $tleft-side-width;
+}
+.testimonials-main-container .right-side {
+    width: $tright-side-width;
+}
+.inner-left-side {
+    margin-left: -15px;
+    width: $tleft-side-width;
+}
+.inner-right-side {
+    margin-right: -15px;
+    width: $tright-side-width;
+    height: 100%;
+}
+.flex-align-center {
+    align-items: center;
+    display: flex;
+    height: 100%;
+}
+.testimonial-content {
+    width: 100%;
+}
+// #icons-collages.left-side {
+//     background-color: #d82488;
+//     background-image: url("./icons-collage.svg");
+//     background-repeat: no-repeat;
+//     background-size: cover;
+// }
+.testimonials-main-container .inner-left-side {
+    align-items: center;
+    // background: teal none repeat scroll 0 0;
+    display: flex;
+    height: 100%;
+}
+// ====================================================
+// Header
+// ====================================================
+.header-nav, #logo {
+    // background: white none repeat scroll 0 0;
+    // margin-bottom: 0;
+    // padding-bottom: 13px;
+    // padding-top: 17px;
+}
+// Header flex box
+#header {
+    // background: teal none repeat scroll 0 0;
+}
+.container.header-container {
+    // background: gold none repeat scroll 0 0;
+}
+.container.nav-container {
+    // background: yellowgreen none repeat scroll 0 0;
+}
+.site-header {
+    align-items: center;
+    background: #fff none repeat scroll 0 0;
+    display: flex;
+    height: 80px;
+    padding: 0 15px;
+    position: relative;
+    z-index: 3;
+}
+.container.header-container {
+    display: flex;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+}
+.container.logo-container,
+.container.nav-container,
+.container.header-navbar-container {
+    width: auto;
+}
+.container.logo-container {
+    padding: 0;
+}
+.header-nav {
+    // align-items: center;
+    display: flex;
+    width: 100%;
+}
+.container.nav-container {
+    align-items: center;
+    display: flex;
+    width: 100%;
+}
+.header-navbar {
+    width: 100%;
+}
+// .header-nav .container {
+//     align-items: center;
+//     display: flex;
+// }
+
+// end flexbox
+
+.header-nav.header-nav-home {
+    background: transparent none repeat scroll 0 0;
+}
+// .header-navbar {
+//     width: 100%;
+// }
+.header-navbar ul {
+    display: flex;
+    float: right;
+    margin: 0 -45px 0 0;
+    padding: 0;
+    width: auto;
+}
+.header-nav a {
+    padding: 11.5px;
+}
+.header-nav .header-navbar a {
+
+}
+
+// ====================================================
+// Logo
+// ====================================================
+#logo {
+    // background: pink none repeat scroll 0 0;
+    padding-top: 0;
+    position: relative;
+    width: 0;
+    z-index: 4;
+}
+.logo {
+    // float: left;
+    height: 50px;
+    width: 150px;
+}
+// #logo .logo {
+//     left: 15px;
+//     position: absolute;
+//     top: 18px;
+//     z-index: 9999999;
+// }
+.logo a {
+    background: transparent url("/logo-alt.svg") no-repeat scroll 0 0 / 147px 50px;
+    display: block;
+    height: 50px;
+    width: 147px;
+}
+.homepage-header .logo a {
+    background: transparent url("/logo.svg") no-repeat scroll 0 0 / 147px 50px;
+}
+
+// ====================================================
+// Navigation
+// ====================================================
+nav a, 
+.nav a {
+    color: $purple;
+}
+.navbar-inverse .navbar-brand {
+    color: #fff;
+}
+.header-nav a:hover, 
+.header-nav a:focus {
+    background-color: transparent;
+    color: #d82488;
+    outline: medium none;
+    text-decoration: none;
+}
+.nav-close, .closebtn {
+    display: none;
+}
+// Slidenav
+
+// ====================================================
+// Home
+// ====================================================
+.homepage-header .container.nav-container {
+    display: none;
+}
+main.home-main-container {
+    display: flex;
+    height: 100vh;
+    margin: -80px auto 0;
+    //outline: 4px solid rebeccapurple;
+    overflow: hidden;
+    padding: 80px 0 0;
+}
+.site-header.homepage-header {
+    background: transparent none repeat scroll 0 0;
+}
+.home-main-container .row {
+    align-items: center;
+    display: flex;
+    margin: 0 auto;
+}
+// ====================================================
+// Jumbotron
+// ====================================================
+.container .jumbotron, .container-fluid .jumbotron {
+    display: flex;
+    flex-direction: column;
+    float: none;
+    margin: -20% auto 0;
+    padding: 48px 25px;
+    text-align: center;
+}
+.jumbotron h1, .jumbotron .h1 {
+    color: white;
+    font-size: 45px;
+    font-weight: bold;
+}
+// ====================================================
+// Thumbnails
+// ====================================================
+.thumbnail {
+    align-items: center;
+    border: none;
+    display: flex;
+    height: 182px;
+    min-height: 182px;
+}
+.caption {
+    text-align: center;
+}
+
+// ====================================================
+// Carousel
+// ====================================================
+// Carousel Indicators
+.carousel-indicators.vertical {
+    display: flex;
+    flex-direction: column;
+    left: unset;
+    margin: 0;
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    width: 10px;
+}
+.carousel-indicators.vertical li {
+    border: 1px solid #2f153a;
+    margin: 7.5px 0;
+}
+.carousel-indicators.vertical li a,
+.carousel-indicators.horizontal li a {
+    cursor: pointer;
+    display: flex;
+    height: 10px;
+    width: 10px;
+}
+.carousel-indicators.vertical .active,
+.carousel-indicators.horizontal .active  {
+    background-color: $brand;
+}
+.carousel-indicators.vertical .active {
+      background-color: $brand;
+}
+// ====================================================
+// Buttons
+// ====================================================
+p.buttons {
+    margin: 0 auto;
+    width: 320px;
+}
+.btn-lg, .btn-group-lg > .btn {
+    border-radius: 6px;
+    color: white;
+    font-size: 13px;
+    font-weight: 100;
+    padding: 10px 16px;
+}
+// ====================================================
+// Main
+// ====================================================
+//be sure to have the same amount of padding-top as the negative margin-top. 
+//you can add extra padding-top on top of that.
+$main-margin-top: -80px; 
+$padding-top: 80px; 
+main {
+    margin-top: $main-margin-top;
+    height: 100vh;
+    min-height: 100vh;
+    padding-top: $padding-top;
+    position: relative;
+}
+// ====================================================
+// About
+// ====================================================
+.about-main-container .row.upper-row {
+    // background-color: teal;
+    margin-bottom: 53px;
+}
+.about-main-container .row.flexbox.lower-row {
+    padding-top: 53px;
+}
+.flex-center-container {
+    align-self: center;
+    display: flex;
+    margin: 0 auto;
+}
+.upper-row {
+    display: block;
+    margin: 0 auto;
+}
+.lower-row {
+    display: flex;
+    margin: 0 auto;
+    margin: 0 auto;
+}
+.flex-inner-container {
+    // display: table;
+}
+.service-icons h3 {
+    color: #30153a;
+}
+// Bios bio
+.bios-main-container .display-contents {
+    // background: teal none repeat scroll 0 0;
+    display: block;
+    width: 100%;
+}
+.display-contents-wrap {
+    display: block;
+    float: right;
+    width: 743px;
+}
+.bio-image {
+    align-self: flex-end;
+    position: relative;
+    width: auto;
+}
+.bio-heading {
+    margin-bottom: 40px;
+}
+.bio-content p {
+    color: white;
+    font-weight: 100;
+}
+.bio-image img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
+// Profile order
+#vivian-bio-image.bio-image {
+    order: 2;
+}
+// ====================================================
+// Portfolio
+// ====================================================
+#portfolio .flex100vh {
+    flex-flow: column wrap;
+    height: 100vh;
+    overflow: scroll;
+}
+.portfolio-item {
+    display: flex;
+    flex-flow: row wrap;
+    height: 50%;
+    position: relative;
+    width: 33.3333%;
+}
+.portfolio-item-cover {
+    background: transparent url("./portfolio-placeholder1@1x.png") no-repeat scroll 50% 50% / cover;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+}
+.portfolio-item-detail {
+    background: #d82488;
+    display: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+.portfolio-item-detail h1,
+.portfolio-item-detail h2,
+.portfolio-item-detail h3,
+.portfolio-item-detail h4 {
+    color: white;
+    text-align: center;
+}
+.portfolio-item:hover a {
+    align-items: center;
+    background: rgba(216, 36, 136, 0.9) none repeat scroll 0 0;
+    cursor: pointer;
+    display: flex;
+    text-decoration: none;
+}
+.portfolio-item:hover a span {
+    display: table;
+}
+// Portfolio Nav
+nav.portfolio-nav {
+    align-items: center;
+    background: #30153a none repeat scroll 0 0;
+    display: flex;
+    height: 80px;
+    z-index: 3;
+}
+.portfolio-nav a {
+    color: white;
+}
+#banner-placeholder {
+    background: transparent url("./banner-placeholder.png") no-repeat scroll 50% 50% / cover ;
+    bottom: 0;
+    height: 300px;
+    left: 0;
+    position: relative;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+}
+// ====================================================
+// Contact Page
+// ====================================================
+main#contact-page {
+    align-content: center;
+    background-color: #2f153a;
+    display: flex;
+    justify-content: space-around;
+    margin-top: -80px;
+    height: 80vh;
+    min-height: 80vh;
+    padding-top: 80px;
+}
+#contact-page section {
+    align-items: center;
+    align-self: center;
+    background-color: #2f153a;
+    display: flex;
+    height: 466px;
+    margin: 0 auto;
+    min-height: 466px;
+    padding: 40px 0;
+    position: relative;
+}
+.contact-page .content .container.content-container {
+    height: 433px;
+    padding: 0;
+}
+// Flex
+.contact-info.left-side {
+    display: flex;
+    flex-direction: column;
+}
+#lets-talk-turkey {
+    order: 1;
+}
+#contact-info {
+    order: 2;
+}
+#contact-form {
+    display: flex;
+    flex-direction: row;
+    order: 3;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+#contact-form form {
+    width: 100%;
+}
+#contact-form .btn-primary {
+    float: right;
+}
+// Contact Page Map
+iframe#map {
+    height: 20vh;
+    min-height: 20vh;
+    width: 100%;
+}
+// ====================================================
+// Forms
+// ====================================================
+.form-group input.form-control,
+.form-group textarea.form-control {
+    border: 1px solid #9b9b9b;
+    width: 100%;
+}
+.form-inline input.form-control,
+.form-group input.form-control {
+    height: 48px;
+}
+.form-inline .form-control, 
+.form-group .form-control {
+    font-size: 17px;
+}
+.form-control {
+    padding: 6px 17px;
+}
+.form-inline {
+    margin-bottom: 30px;
+}
+// ====================================================
+// Flex
+// ====================================================
+.row.flex {
+    display: flex;
+    flex-direction: column;
+}
+.flex [class*="col-sm"] {
+    float: none;
+}
+.row.flex100vh {
+    align-items: center;
+    display: flex;
+    margin-top: -80px;
+    height: 100vh;
+    min-height: 100vh;
+    padding-top: 80px;
+}
+.flex-end {
+    align-self: flex-end;
+}
+.flex-center {
+    align-self: center;
+}
+// Flex Wrap Wrap
+.flex-wrap.wrap {
+    flex-wrap: wrap;
+}
+.display.flex {
+    display: flex;
+}
+// ====================================================
+// Vertical Nav
+// ====================================================
+.vertical-side-nav {
+    // background: white none repeat scroll 0 0;
+    // border: 1px solid #ccc;
+    bottom: 0;
+    display: flex;
+    height: 100vh;
+    position: fixed;
+    right: 12px;
+    top: 0;
+    width: 40px;
+    z-index: 2;
+}
+.vertical-wrap {
+    // background: gold none repeat scroll 0 0;
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+.vertical-side-nav .carousel-indicators.vertical {
+    bottom: unset;
+    display: flex;
+    flex-direction: column;
+    left: unset;
+    margin: 0 auto;
+    position: relative;
+    right: unset;
+    top: 50%;
+    width: 10px;
+}
