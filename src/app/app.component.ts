@@ -4,7 +4,6 @@ import {Http} from '@angular/http';
 import {XLarge} from './components/x-large.component.ts';
 import {Home} from './home/home.component';
 import {About} from './about/about.component';
-import {Portfolio} from './portfolio/portfolio.component';
 
 @Component({
   selector: 'app', // <app></app>
@@ -12,14 +11,13 @@ import {Portfolio} from './portfolio/portfolio.component';
     ...ROUTER_DIRECTIVES,
     XLarge
   ],
-  styleUrls: ['dist/client/so-much-style.min.css'],
+  styleUrls: ['src/app/app.component.css'],
   templateUrl: 'src/app/app.component.html'
 })
 @RouteConfig([
   { path: '/', component: Home, name: 'Home', useAsDefault: true },
   { path: '/home', component: Home, name: 'Home' },
   { path: '/about', component: About, name: 'About' },
-  { path: '/portfolio', component: Portfolio, name: 'Portfolio' },
   { path: '/**', redirectTo: ['Home'] }
 ])
 export class App {
